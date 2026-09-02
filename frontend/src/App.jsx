@@ -245,7 +245,8 @@ function Catalogo() {
   }, [])
 
   const ampliar = useCallback(
-    (src) => setLupa({ src, pie: `${especie.cientifico} — fotografía de Patricio Emanuelli` }),
+    (fuente) =>
+      setLupa({ fuente, pie: `${especie.cientifico} — fotografía de Patricio Emanuelli` }),
     [especie],
   )
 

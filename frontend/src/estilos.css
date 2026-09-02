@@ -714,3 +714,8 @@ button { cursor: pointer; background: none; border: none; padding: 0; }
 .tiras::-webkit-scrollbar { height: 6px; }
 .tiras::-webkit-scrollbar-thumb { background: var(--borde-fuerte); border-radius: 4px; }
 .tira { min-width: 64px; }
+
+/* <picture> envuelve al <img> para ofrecer AVIF con respaldo WebP. Sin esto
+   sería el picture —y no la imagen— el hijo de las rejillas `.lamina`,
+   `.retrato` y `.tira`, y los estilos del original dejarían de aplicar. */
+picture { display: contents; }

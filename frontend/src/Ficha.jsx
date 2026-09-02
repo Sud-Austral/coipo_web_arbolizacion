@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ESCALA, ESTRATOS, GRAVEDAD, NOMBRE_CAMPO, detalle, estratoDe } from './dominio.js'
+import { ANCHO_RETRATO, Foto, juego } from './Foto.jsx'
 import { ICO, IconoAspaGrande, IconoChevronDer, IconoChevronIzq } from './iconos.jsx'
 import { Lamina } from './Lamina.jsx'
 
@@ -69,8 +70,10 @@ function Galeria({ especie: e, fotos, onAmpliar }) {
   return (
     <>
       <div className="retrato">
-        <img
-          src={foto.ficha}
+        <Foto
+          fuente={foto.ficha}
+          srcSet={juego(foto)}
+          sizes={ANCHO_RETRATO}
           alt={e.cientifico}
           onError={() => setRoto(true)}
           onClick={() => onAmpliar(foto.completa)}
@@ -86,7 +89,7 @@ function Galeria({ especie: e, fotos, onAmpliar }) {
             aria-label={`Ver ${f.tipo || 'imagen'}`}
             onClick={() => setActiva(i)}
           >
-            <img src={f.mini} alt="" loading="lazy" />
+            <Foto fuente={f.mini} alt="" loading="lazy" />
             <span className="et">{f.tipo}</span>
           </button>
         ))}
@@ -351,7 +354,7 @@ export function Lupa({ lupa, onCerrar }) {
       <button className="cerrar" aria-label="Cerrar imagen" onClick={onCerrar}>
         <IconoAspaGrande />
       </button>
-      {lupa && <img src={lupa.src} alt="" />}
+      {lupa && <Foto fuente={lupa.fuente} alt="" />}
       <div className="pie">{lupa?.pie}</div>
     </div>
   )

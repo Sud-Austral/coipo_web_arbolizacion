@@ -1,3 +1,8 @@
 
 # reglas de COIPO_ERRORES (rutas absolutas, personales)
 .claude/rules/errores-*.md
+
+# Derivados WebP: respaldo local para navegadores sin AVIF. No se versionan
+# —el repo lleva solo el AVIF, un tercio más liviano— y se regeneran con
+#   python INSUMO/sitio-arbolado-urbano/build_fotos.py INSUMO_FOTO -o frontend/public/fotos --continuar
+frontend/public/fotos/**/*.webp

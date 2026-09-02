@@ -11,6 +11,7 @@ import {
   miles,
 } from './dominio.js'
 import { ICO, IconoAspaChica, IconoAspaPildora, IconoBuscar, IconoCheck, IconoFiltros, IconoFlechaFaceta, IconoSol, IconoVacio } from './iconos.jsx'
+import { Foto } from './Foto.jsx'
 import { Lamina } from './Lamina.jsx'
 
 /* ── Cabecera ────────────────────────────────────────────────────────── */
@@ -278,7 +279,12 @@ const Tarjeta = memo(function Tarjeta({ especie: e, hero, regiones, onAbrir }) {
     <button className="tarjeta" onClick={() => onAbrir(e.id)}>
       {conFoto ? (
         <div className="lamina">
-          <img src={hero.mini} alt={e.cientifico} loading="lazy" onError={() => setRoto(true)} />
+          <Foto
+            fuente={hero.mini}
+            alt={e.cientifico}
+            loading="lazy"
+            onError={() => setRoto(true)}
+          />
         </div>
       ) : (
         <div className="lamina sin-foto">
