@@ -6,3 +6,8 @@
 # —el repo lleva solo el AVIF, un tercio más liviano— y se regeneran con
 #   python INSUMO/sitio-arbolado-urbano/build_fotos.py INSUMO_FOTO -o frontend/public/fotos --continuar
 frontend/public/fotos/**/*.webp
+
+# Fotografías originales (349 JPG, 1,7 GB). Son la fuente de los derivados,
+# no algo que el sitio sirva; versionarlas hinchaba el repo a 1,9 GB. Están
+# solo en disco: si se pierden, no hay otra copia.
+INSUMO_FOTO/
