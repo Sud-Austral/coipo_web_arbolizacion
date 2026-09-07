@@ -1,0 +1,103 @@
+insumos:
+
+  - ruta: "INSUMO/RyC Especies (21.08.2026).xlsx"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] planilla de origen no inspeccionada por el analizador; patron esperado nombres de especies, no de personas; conteo de coincidencias de patron personal: 0 en la evidencia disponible"
+    puede_versionarse: true
+    uso: "Planilla de origen del catalogo de especies, consumida por el constructor de datos [INSUMO/etapa1-contrato-datos/build_data.py:27]"
+
+  - ruta: "INSUMO/etapa1-contrato-datos/schema.sql"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] definicion de estructura; 0 valores de dato en la evidencia"
+    puede_versionarse: true
+    uso: "Define las tablas del catalogo: especie, taxon, nombre_comun, especie_region, conservacion, fotografia, fuente, especie_fuente, especie_historial y la vista de completitud [INSUMO/etapa1-contrato-datos/schema.sql:544]"
+
+  - ruta: "INSUMO/sitio-arbolado-urbano/schema.sql"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] definicion de estructura; 0 valores de dato en la evidencia"
+    puede_versionarse: true
+    uso: "Segunda copia del mismo esquema, en la carpeta del pipeline anterior [INSUMO/sitio-arbolado-urbano/schema.sql:230]"
+
+  - ruta: "INSUMO/sitio-arbolado-urbano/fotos_clasificacion.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] archivo de clasificacion de imagenes; podria incluir autoria o ubicacion de la toma; conteo no verificable desde la evidencia"
+    puede_versionarse: true
+    uso: "Clasificacion declarada de las fotografias, leida por el constructor de datos [INSUMO/sitio-arbolado-urbano/build_data.py]"
+
+  - ruta: "frontend/public/datos/especies.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] dato derivado de la planilla de origen; patron esperado nombres de especies; conteo de coincidencias de patron personal: 0 en la evidencia disponible"
+    puede_versionarse: true
+    uso: "Conjunto de datos del catalogo que consume el sitio publicado [frontend/src/datos.js:13]"
+
+  - ruta: "frontend/public/datos/facetas.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] valores agregados de filtro; conteo de coincidencias de patron personal: 0 en la evidencia disponible"
+    puede_versionarse: true
+    uso: "Valores de filtro precalculados por el constructor de datos [INSUMO/etapa1-contrato-datos/build_data.py]"
+
+  - ruta: "frontend/public/datos/fotos.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] indice de fotografias; podria arrastrar autoria o coordenadas extraidas de metadatos de imagen [INSUMO/build_fotos.py]; conteo no verificable desde la evidencia"
+    puede_versionarse: true
+    uso: "Indice de las fotografias por especie que usa la galeria [frontend/src/Foto.jsx]"
+
+  - ruta: "frontend/public/datos/meta.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] metadatos de la construccion; conteo de coincidencias de patron personal: 0 en la evidencia disponible"
+    puede_versionarse: true
+    uso: "Metadatos del conjunto de datos publicado, generados en la construccion [INSUMO/etapa1-contrato-datos/build_data.py]"
+
+  - ruta: "frontend/package.json"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] manifiesto de dependencias; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Unico manifiesto de dependencias del repositorio; declara el stack del sitio [frontend/package.json:13]"
+
+  - ruta: "frontend/vite.config.js"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] configuracion de construccion; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Configuracion de construccion; define la base de publicacion [frontend/vite.config.js:6]"
+
+  - ruta: ".github/workflows/deploy.yml"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] flujo de publicacion; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Flujo de publicacion automatica del sitio"
+
+  - ruta: ".github/workflows/readme.yml"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] flujo de documentacion; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Flujo que regenera la documentacion del repositorio"
+
+  - ruta: "INSUMO/etapa1-contrato-datos/LEEME.md"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] documentacion; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Documentacion del pipeline de construccion de datos"
+
+  - ruta: "INSUMO/sitio-arbolado-urbano/LEEME.md"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] documentacion; 0 coincidencias de patron personal en la evidencia"
+    puede_versionarse: true
+    uso: "Documentacion de la version anterior del pipeline y del sitio armado por script"
+
+hallazgos:
+  - "El repositorio versiona 1047 archivos de imagen derivados bajo frontend/public/fotos/, por ejemplo [frontend/public/fotos/luma-apiculata/285-400.avif]. Si los metadatos de las imagenes originales incluian coordenadas o autoria, corresponde [VERIFICAR] que el derivador [INSUMO/build_fotos.py] no los propague."
+  - "Existen dos copias del mismo pipeline y del mismo esquema, [INSUMO/etapa1-contrato-datos/schema.sql] e [INSUMO/sitio-arbolado-urbano/schema.sql]. Cual es la vigente es [PENDIENTE]."
