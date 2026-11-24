@@ -1,7 +1,7 @@
 # coipo_web_arbolizacion — guía para agentes
 
 Sitio estático del **Catálogo RyC de Especies para Arbolado Urbano** (CONAF). Resumen en [`README.md`](README.md); problema y solución en [`insumos/`](insumos/)
-(reconstruidos desde el código, con `[PENDIENTE]` y `[VERIFICAR]` que los cierra el área usuaria, no un asistente). Lo marcado VERIFICADO se leyó en el repo el 2026-10-24; no ejecuté build ni pruebas.
+(reconstruidos desde el código, con `[PENDIENTE]` y `[VERIFICAR]` que los cierra el área usuaria, no un asistente). Lo marcado VERIFICADO se leyó en el repo el 2026-10-24. El 2026-11-24 se ejecutó en `frontend/`: `npm ci`, `npm run lint` (código 0, con avisos) y `npm run build` (código 0); también se recontaron `especies.json` (1.016) y `meta.json` (`con_foto: 15`).
 
 ## Qué es
 
@@ -17,7 +17,7 @@ frontend/public/ datos/ (JSON), fotos/ (derivados), favicon.svg
 frontend/scripts/generar-avif.mjs   genera AVIF desde los WebP (necesita sharp, que NO es dependencia)
 INSUMO/          fuente de los datos: Excel "RyC Especies (21.08.2026).xlsx", build_fotos.py, etapa1-contrato-datos/ (build_data.py, schema.sql, load_pg.py), sitio-arbolado-urbano/
 insumos/         documentos de problema y solución (minúscula; no confundir con INSUMO/)
-.github/workflows/  deploy.yml (Pages) y readme.yml (mantiene el README)
+.github/workflows/  deploy.yml (Pages; readme.yml se quitó en 67d5b91)
 ```
 
 ## Comandos (desde `frontend/`)
@@ -48,4 +48,4 @@ Las fotos: `INSUMO/build_fotos.py` (lee la fototeca original, que no está en el
 - `frontend/public/datos/*.json` son salida del pipeline de `INSUMO/`: no se editan a mano.
 - No versionar la fototeca original (1,7 GB según `build_fotos.py`) ni credenciales; el repo no tiene `.env`.
 - No cerrar los `[PENDIENTE]` / `[VERIFICAR]` de `insumos/` por cuenta propia (dueño del catálogo, validez de los datos de conservación).
-- `README.md` lo mantiene un bot entre las marcas `AI:BEGIN`/`AI:END`; los cambios a mano dentro de ese bloque pueden ser reemplazados en el siguiente push a `main`.
+- `README.md` ya no lo mantiene un bot: el workflow `readme.yml` se quitó (commit `67d5b91`) y las marcas `AI:BEGIN`/`AI:END` se retiraron el 2026-11-24. Se edita a mano.
