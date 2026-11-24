@@ -1,4 +1,3 @@
-<!-- AI:BEGIN id=readme sha=5d9df25bb92f -->
 # coipo_web_arbolizacion
 
 ## Descripción
@@ -17,7 +16,7 @@ Catálogo web de especies para arbolado urbano (RyC de Especies, CONAF): fichas 
 
 - `frontend/`: Directorio principal de la aplicación frontend
 - `INSUMO/`: Contiene scripts para procesamiento de datos y carga a base de datos
-- `.github/workflows/`: Archivos de configuración para despliegue y generación de README
+- `.github/workflows/deploy.yml`: build y publicación en GitHub Pages
 
 ## Requisitos
 
@@ -75,11 +74,8 @@ El proyecto incluye componentes React como:
 
 ## Pruebas
 
-No se encontraron evidencias de configuración de pruebas.
+No hay suite de pruebas. Verificado el 2026-11-24 en `frontend/`: `npm ci`, `npm run lint` (oxlint, código 0, con avisos `no-unused-expressions` en `src/App.jsx`) y `npm run build` (código 0, ~2 s).
 
 ## Despliegue
 
-Cada push a `main` ejecuta `.github/workflows/deploy.yml` (Node 22: `npm ci`, `npm run build` en `frontend/`, publicación de `frontend/dist` en GitHub Pages). No hay pruebas automáticas en ese flujo. Otro workflow, `readme.yml`, mantiene este README (bloque entre las marcas `AI:BEGIN`/`AI:END`).
-<!-- AI:END id=readme -->
-
-<!-- ai-readme-fingerprint: sha256:79808f9e07d99b9997bb69088adac524c269c765a262ac5022f947366aa7818c -->
+Cada push a `main` ejecuta `.github/workflows/deploy.yml` (Node 22: `npm ci`, `npm run build` en `frontend/`, publicación de `frontend/dist` en GitHub Pages). No hay pruebas automáticas en ese flujo. Este README se mantiene a mano: el workflow `readme.yml` que lo regeneraba se quitó en el commit `67d5b91`. No comprobado: que el sitio publicado en Pages esté al día.
